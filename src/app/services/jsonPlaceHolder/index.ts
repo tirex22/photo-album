@@ -45,14 +45,14 @@ export class JsonPlaceHolderService {
   }
 
 
-  // returns all 10 users 
+  // fetches information about all 10 users
   getUsers = () => {
     let url = this.config.apiUrl + this.config.usersEndPoint;
     return this.http.get(url);
   }
 
 
-  // returns the user with the given id
+  // fetches information about the user with the given id
   getUser = (userId: number) => {
     let url = this.config.apiUrl + this.config.usersEndPoint + '/' + userId;
     return this.http.get(url);
@@ -66,14 +66,14 @@ export class JsonPlaceHolderService {
   }
 
 
-  // returns the albums of a given user
+  // fetches albums of a given user
   getAlbums = (userId: number) => {
     let url = this.config.apiUrl + this.config.albumsEndPoint + '?userId=' + userId;
     return this.http.get(url);
   }
 
 
-  // returns the photos of a given album
+  // fetches photos of a given album
   getPhotos = (albumId: number) => {
     let url = this.config.apiUrl + this.config.photosEndPoint + '?albumId=' + albumId;
     return this.http.get(url);
