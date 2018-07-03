@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 
 //pages
-import { LandingPage } from './pages/landing';
+import { LandingPage } from '@pages/landing';
+import { UserPage } from '@pages/user';
+
+//components
+import { UserFormComponent } from './components/user-form';
+import { UserComponent } from './components/user/';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPage,
+    UserPage,
+    UserFormComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

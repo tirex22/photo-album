@@ -22,25 +22,27 @@ export class JsonPlaceHolderService {
       })
     }
 
-    this.config = {
-      "apiUrl": "http://jsonplaceholder.typicode.com",
-      "usersEndPoint": "/users",
-      "albumsEndPoint": "/albums",
-      "photosEndPoint": "/photos",
-      "postsEndPoint": "/posts",
-    };
+    // this.config = {
+    //   "apiUrl": "http://jsonplaceholder.typicode.com",
+    //   "usersEndPoint": "/users",
+    //   "albumsEndPoint": "/albums",
+    //   "photosEndPoint": "/photos",
+    //   "postsEndPoint": "/posts",
+    // };
 
   }
 
 
   // configures the service with correct api url and end points
-  configure = () => {
+  configure = (callback) => {
 
     // fetch configuration file
     this.http.get(this.configPath).subscribe(config => {
 
       // set configuration to the corresponding json configuration object
       this.config = config['jsonPlaceHolderService'];
+
+      callback();
     });
   }
 
