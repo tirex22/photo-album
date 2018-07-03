@@ -5,7 +5,6 @@ import { Location } from '@angular/common'
 import { User } from '@models/user';
 import { Album } from '@models/album';
 import { Photo } from '@models/photo';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -23,17 +22,13 @@ export class UserPage implements OnInit {
   selectedAlbum: number;
   constructor(
     private jsonPlaceHolderService: JsonPlaceHolderService,
-    private route: ActivatedRoute
-    private spinner: NgxSpinnerService
+    private route: ActivatedRoute,
   ) {
     this.showPhotos = false;
     this.selectedAlbum = 0;
   }
 
   ngOnInit() {
-
-    // spinner starts on init 
-    // this.spinner.show();
 
     // configure json-place-holder service if not configured
     this.jsonPlaceHolderService.configure(() => {
@@ -69,8 +64,6 @@ export class UserPage implements OnInit {
 
         // set final album list
         this.albums = newAlbums;
-
-        this.spinner.hide();
       });
   }
 
@@ -80,7 +73,6 @@ export class UserPage implements OnInit {
     this.jsonPlaceHolderService.getUser(userId)
       .subscribe(user => {
         this.user = new User(user);
-        this.spinner.hide();
       });
   }
 
@@ -100,7 +92,6 @@ export class UserPage implements OnInit {
 
         // set final album list
         this.photos = newPhotos;
-        this.location.go("/ss")
       });
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Album } from '@models/album';
 
 @Component({
   selector: 'album',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./album.component.scss']
 })
 export class AlbumComponent implements OnInit {
-  @Input() album: ;
+  @Input() album: Album;
   @Input() onClick: Function;
 
 

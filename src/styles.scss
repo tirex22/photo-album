@@ -6,26 +6,51 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: $color-background;
+    background-color: $background-color;
     overflow-x: hidden;
 }
 
 .hidden{
-    -webkit-animation: fadeout .5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadeout .5s; /* Firefox < 16 */
-        -ms-animation: fadeout .5s; /* Internet Explorer */
-         -o-animation: fadeout .5s; /* Opera < 12.1 */
-            animation: fadeout .5s;
-            visibility: hidden;
-            position: absolute;
+    visibility: hidden;
+    position: absolute;
 }
 
 .visible{
-    -webkit-animation: fadein .5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein .5s; /* Firefox < 16 */
-        -ms-animation: fadein .5s; /* Internet Explorer */
-         -o-animation: fadein .5s; /* Opera < 12.1 */
-            animation: fadein .5s;
+    visibility: visible;
+    position: relative;
+}
+
+.title{
+    text-align: center;
+    color: $text-color;
+    font-weight: 100;
+    margin:20px;
+}
+
+.button{
+    height: 45px;
+    width:100%;
+    float: right;
+    margin: 0;
+    max-width: 140px;
+    border-radius: 22.5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button p{
+    position: relative;
+    margin-top: 17px;
+    font-size: 11pt;
+    font-weight: 500;
+    color:#fff;
+    text-decoration: none;
+}
+
+.button:hover{
+    opacity: 0.8;
+    text-decoration: none;
 }
 
 @keyframes fadein {

@@ -13,13 +13,13 @@ import { LandingPage } from '@pages/landing';
 import { UserPage } from '@pages/user';
 
 // components
-import { UserFormComponent } from './components/user-form/user-form.component.ts';
-import { UserComponent } from './components/user/user.component.ts';
-import { AlbumComponent } from './components/album/album.component.ts';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { UserComponent } from './components/user/user.component';
+import { AlbumComponent } from './components/album/album.component';
 import { PhotoComponent } from './components/photo/photo.component';
 import { InfoHeaderComponent } from './components/info-header/info-header.component';
-
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { HeaderComponent } from './components/header/header.component';
+import { ActionBarComponent } from './components/action-bar/action-bar.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +31,15 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AlbumComponent,
     PhotoComponent,
     InfoHeaderComponent,
+    ActionBarComponent,
+    HeaderComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxSpinnerModule
+
   ],
   providers: [
     JsonPlaceHolderService,

@@ -1,11 +1,8 @@
-<!-- loading -->
-<ngx-spinner bdColor="rgba(255, 255, 255, 0.8)" size="large" color="#512884" type="ball-clip-rotate"></ngx-spinner>
-
 <!-- user information -->
 <info-header *ngIf="user" [user]="user"></info-header>
 
 <!-- page title -->
-<h1 class="title">{{showPhotos ? 'Albums / #' + selectedAlbum : 'Albums' }}</h1>
+<h2 class="title">{{showPhotos ? 'Albums / #' + selectedAlbum : 'Albums' }}</h2>
 
 <!-- albums container -->
 <div ngClass="{{ showPhotos ? 'album-container row hidden' : 'album-container row visible' }}">

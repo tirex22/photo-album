@@ -6,12 +6,15 @@
     padding: 15px 0px 15px 0px;
     background-color: #fff;
     margin:0;
-    color: #000;
+    color: $text-color;
     display: flex;
     align-items: center;
     border-bottom:solid;
     border-color: $border-color;
     border-width: 1px;
+    position: relative;
+    margin-top: 50px;
+    
 }
 
 .card{
