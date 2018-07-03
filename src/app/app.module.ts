@@ -5,13 +5,18 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 
-//pages
+// services
+import { JsonPlaceHolderService } from '@services/json-place-holder';
+
+// pages
 import { LandingPage } from '@pages/landing';
 import { UserPage } from '@pages/user';
 
-//components
-import { UserFormComponent } from './components/user-form';
-import { UserComponent } from './components/user/';
+// components
+import { UserFormComponent } from './components/user-form/user-form.component.ts';
+import { UserComponent } from './components/user/user.component.ts';
+import { AlbumComponent } from './components/album/album.component.ts';
+import { PhotoComponent } from './components/photo/photo.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,17 @@ import { UserComponent } from './components/user/';
     UserPage,
     UserFormComponent,
     UserComponent,
+    AlbumComponent,
+    PhotoComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    JsonPlaceHolderService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

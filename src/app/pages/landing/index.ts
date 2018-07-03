@@ -31,7 +31,7 @@ export class LandingPage implements OnInit {
 
   // gets all users using json-place-holder "getUsers" function
   getUsers = () => {
-    var newUsers = [];
+    let newUsers = [];
     this.jsonPlaceHolderService.getUsers()
       .subscribe((users) => {
 
@@ -57,7 +57,7 @@ export class LandingPage implements OnInit {
   }
 
 
-  // event handler for choosing a user
+  // event handler for clicking a user
   onUserClicked = (user) => {
 
     // navigate to user page

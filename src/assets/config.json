@@ -3,6 +3,6 @@
         "apiUrl": "http://jsonplaceholder.typicode.com",
         "usersEndPoint": "/users",
         "albumsEndPoint": "/albums",
-        "postsEndPoint": "/posts"
+        "photosEndPoint": "/photos"
     }
 }

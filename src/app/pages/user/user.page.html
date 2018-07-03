@@ -1,3 +1,11 @@
-<p>
-  user works!
-</p>
+<h1>User</h1>
+<user *ngIf="user" [user]="user"></user>
+<br>
+<h1>Albums</h1>
+<album *ngFor="let album of albums" [album]='album' [onClick]="onAlbumClicked"></album>
+<br>
+<h1>Photos</h1>
+
+<div *ngIf="photos">
+    <photo *ngFor="let photo of photos" [photo]='photo'></photo>
+</div>
