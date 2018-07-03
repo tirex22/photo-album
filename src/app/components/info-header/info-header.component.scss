@@ -1,0 +1,44 @@
+@import '~variables.scss';
+
+.info-header{
+    width: 100%;
+    height: 80px;
+    padding: 15px 0px 15px 0px;
+    background-color: #fff;
+    margin:0;
+    color: #000;
+    display: flex;
+    align-items: center;
+    border-bottom:solid;
+    border-color: $border-color;
+    border-width: 1px;
+}
+
+.card{
+    width: 33%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.contacts{
+    border-left: solid;
+    border-right: solid;  
+    border-width: 1px;
+    border-color: #bbb;
+}
+
+@media screen and (max-width: 500px) {
+    .contacts{
+      display: none;
+    }
+
+    .address{
+        display: none;
+    }
+
+    .card{
+        width: 100%;
+    }
+}

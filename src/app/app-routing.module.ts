@@ -9,6 +9,7 @@ import { UserPage } from '@pages/user'
 const routes: Routes = [
   { path: '', component: LandingPage },
   { path: 'user/:id', component: UserPage }
+  { path: 'user/album/:id', component: UserPage }
 ];
 
 @NgModule({

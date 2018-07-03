@@ -1,0 +1,35 @@
+@import '~variables.scss';
+
+.title{
+    text-align: center;
+    color: $primary-color;
+    margin:20px;
+}
+
+.album-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .album-container{
+        padding: 0 20% 0 20% ;
+    }
+
+    .photo-container{
+        padding: 0 5% 0 5% ;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .album-container{
+        padding: 0;
+    }
+}

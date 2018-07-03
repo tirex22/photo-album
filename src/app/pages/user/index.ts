@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonPlaceHolderService } from '@services/json-place-holder';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common'
 import { User } from '@models/user';
 import { Album } from '@models/album';
 import { Photo } from '@models/photo';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-user',
@@ -16,12 +19,21 @@ export class UserPage implements OnInit {
   user: User;
   albums: Album[];
   photos: Photo[];
-
+  showPhotos: boolean;
+  selectedAlbum: number;
   constructor(
-    private jsonPlaceHolderService: JsonPlaceHolderService
-    private route: ActivatedRoute) { }
+    private jsonPlaceHolderService: JsonPlaceHolderService,
+    private route: ActivatedRoute
+    private spinner: NgxSpinnerService
+  ) {
+    this.showPhotos = false;
+    this.selectedAlbum = 0;
+  }
 
   ngOnInit() {
+
+    // spinner starts on init 
+    // this.spinner.show();
 
     // configure json-place-holder service if not configured
     this.jsonPlaceHolderService.configure(() => {
@@ -57,6 +69,8 @@ export class UserPage implements OnInit {
 
         // set final album list
         this.albums = newAlbums;
+
+        this.spinner.hide();
       });
   }
 
@@ -64,7 +78,10 @@ export class UserPage implements OnInit {
   // gets user information using json-place-holder "getUser" function
   getUser = (userId: number) => {
     this.jsonPlaceHolderService.getUser(userId)
-      .subscribe(user => this.user = new User(user));
+      .subscribe(user => {
+        this.user = new User(user);
+        this.spinner.hide();
+      });
   }
 
 
@@ -83,13 +100,22 @@ export class UserPage implements OnInit {
 
         // set final album list
         this.photos = newPhotos;
+        this.location.go("/ss")
       });
   }
 
 
   // event handler for clicking an album
   onAlbumClicked = (album) => {
+
+    // show photos view
+    this.showPhotos = true;
+
+    // get photos of clicked album
     this.getPhotos(album.id);
+
+    // show current album id
+    this.selectedAlbum = album.id
   }
 
 }
