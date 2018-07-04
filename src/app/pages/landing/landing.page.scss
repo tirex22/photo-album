@@ -1,0 +1,36 @@
+table{
+    width:90%;
+    margin-top:50px;
+    margin-left:5%;
+}
+
+th{
+    margin-bottom:50px;
+}
+
+tr{
+    cursor: pointer;
+}
+
+.user{
+    height:55px;
+}
+
+.odd{
+background-color: #fff;
+}
+
+.user:hover{
+    background-color: rgba(0,0,0,0.02);
+}
+
+@media screen and (max-width: 500px) {
+
+    .email{
+      display:none!important;
+    }
+
+    .address{
+        display:none!important;
+      }
+}

@@ -17,12 +17,12 @@ header img{
 }
 
 header .text-logo{
-    font-family: 'Raleway', sans-serif;
-    float: left;
-    margin: 0px 50px 0px 10px;
+    
+    // float: left;
+    margin: -4px 45px 0px 10px;
     color: #ddd;
-    font-size: 13pt;
-    font-weight: 200;
+    font-size: 15pt;
+    font-weight: 300;
     text-decoration: none;
 }
 
@@ -42,4 +42,11 @@ header .link{
 .active{
     background-color: rgba(0,0,0,0.2);
     color:#fff!important;
+}
+
+@media screen and (max-width: 500px) {
+
+    .link{
+      display:none!important;
+    }
 }
