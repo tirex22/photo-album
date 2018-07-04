@@ -1,2 +1,8 @@
-<action-bar></action-bar>
+<!-- action bar containing the title and add user button -->
+<action-bar [title]="Users" [actionName]="AddUser" [onClick]='openModal'></action-bar>
+
+<!-- list of user components -->
 <user *ngFor="let user of users" [user]='user' [onClick]="onUserClicked"></user>
+
+<!-- adding new user form ( Modal ) -->
+<user-form [modalOpened]='modalOpened' [onFormClosed]='closeModal' [onCreateUser]="createUser"></user-form>

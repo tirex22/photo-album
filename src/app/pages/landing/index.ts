@@ -11,11 +11,11 @@ import { User } from '@models/user'
 export class LandingPage implements OnInit {
 
   users: User[]; // list of users
+  modalOpened: false;
 
   constructor(
     private jsonPlaceHolderService: JsonPlaceHolderService,
-    private router: Router) {
-  }
+    private router: Router) { }
 
 
   ngOnInit() {
@@ -52,7 +52,9 @@ export class LandingPage implements OnInit {
   createUser = (user) => {
     this.jsonPlaceHolderService.createUser(user)
       .subscribe(newUser => {
-
+        this.closeModal();
+        let user = new User(newUser);
+        this.users.push(user);
       });
   }
 
@@ -62,6 +64,17 @@ export class LandingPage implements OnInit {
 
     // navigate to user page
     this.router.navigateByUrl('/user/' + user.id);
+  }
+
+
+  // opens the form modal
+  openModal = () => {
+    this.modalOpened = true;
+  }
+
+  // closes the form modal
+  closeModal = () => {
+    this.modalOpened = false;
   }
 
 }

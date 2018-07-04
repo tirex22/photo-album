@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfoHeaderComponent } from './info-header.component';
+import { InfoBarComponent } from './info-bar.component';
 
-describe('InfoHeaderComponent', () => {
-  let component: InfoHeaderComponent;
-  let fixture: ComponentFixture<InfoHeaderComponent>;
+describe('InfoBarComponent', () => {
+  let component: InfoBarComponent;
+  let fixture: ComponentFixture<InfoBarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InfoHeaderComponent ]
+      declarations: [InfoBarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InfoHeaderComponent);
+    fixture = TestBed.createComponent(InfoBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

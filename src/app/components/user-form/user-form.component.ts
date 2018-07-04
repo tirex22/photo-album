@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'user-form',
@@ -8,9 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
 
-  constructor() { }
+  @Input() modalOpened: boolean;
+  @Input() onFormClosed: Function;
+  @Input() onCreateUser: Function;
+  userForm: FormGroup;
+
+  constructor(private private fb: FormBuilder) {
+    this.createForm();
+  }
+
 
   ngOnInit() {
   }
+
+  submitForm(user) {
+    this.onCreateUser(user);
+    this.userForm.reset();
+  }
+
+  createForm = () => {
+    this.userForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      phone: ['', Validators.required],
+      address: this.fb.group({
+        street: ['', Validators.required],
+        suite: ['', Validators.required],
+        city: ['', Validators.required],
+      }),
+    });
+  }
+
 
 }

@@ -90,7 +90,7 @@ export class UserPage implements OnInit {
           newPhotos.push(new Photo(photo));
         });
 
-        // set final album list
+        // set final photo list
         this.photos = newPhotos;
       });
   }

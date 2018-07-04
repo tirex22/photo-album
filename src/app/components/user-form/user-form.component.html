@@ -1,3 +1,27 @@
-<p>
-  user-form works!
-</p>
+<!-- The Modal -->
+<div ngClass="{{modalOpened ? 'modal opened' : 'modal closed'}}">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span (click)='onFormClosed()' class="close">&times;</span>
+    <h2 class="title">Add new user</h2>
+
+    <!-- form -->
+    <form [formGroup]="userForm" (ngSubmit)='submitForm(userForm.value)'>
+      <div class="form-container">
+        <input formControlName="name" placeholder="Name" />
+        <input formControlName="email" placeholder="Email" />
+        <input formControlName="phone" placeholder="Phone" />
+      </div>
+      <div formGroupName="address" class="form-container">
+        <input formControlName="suite" placeholder="Suite" />
+        <input formControlName="street" placeholder="Street" />
+        <input formControlName="city" placeholder="City" />
+      </div>
+
+      <input type="submit" ngClass="{{userForm.valid ? 'button' : 'button disabled' }}" />
+    </form>
+
+  </div>
+
+</div>

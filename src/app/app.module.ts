@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // services
 import { JsonPlaceHolderService } from '@services/json-place-holder';
@@ -17,9 +18,10 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserComponent } from './components/user/user.component';
 import { AlbumComponent } from './components/album/album.component';
 import { PhotoComponent } from './components/photo/photo.component';
-import { InfoHeaderComponent } from './components/info-header/info-header.component';
+import { InfoBarComponent } from './components/info-bar/info-bar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ActionBarComponent } from './components/action-bar/action-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { ActionBarComponent } from './components/action-bar/action-bar.component
     UserComponent,
     AlbumComponent,
     PhotoComponent,
-    InfoHeaderComponent,
+    InfoBarComponent,
     ActionBarComponent,
     HeaderComponent,
 
@@ -39,6 +41,7 @@ import { ActionBarComponent } from './components/action-bar/action-bar.component
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule
 
   ],
   providers: [

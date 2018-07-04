@@ -1,5 +1,5 @@
 header{
-    background-color: #2C3642 ;
+    background-color: #512884 ;
     height: 50px;
     display: flex;
     align-items: center;
@@ -40,6 +40,6 @@ header .link{
 }
 
 .active{
-    background-color: #36C5D3;
+    background-color: rgba(0,0,0,0.2);
     color:#fff!important;
 }
