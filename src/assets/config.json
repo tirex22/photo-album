@@ -1,6 +1,6 @@
 {
     "jsonPlaceHolderService": {
-        "apiUrl": "http://jsonplaceholder.typicode.com",
+        "apiUrl": "https://jsonplaceholder.typicode.com",
         "usersEndPoint": "/users",
         "albumsEndPoint": "/albums",
         "photosEndPoint": "/photos"
