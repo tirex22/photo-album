@@ -13,7 +13,7 @@ export class UserFormComponent implements OnInit {
   @Input() onCreateUser: Function;
   userForm: FormGroup;
 
-  constructor(private private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {
     this.createForm();
   }
 

@@ -9,7 +9,7 @@ export class User {
         suite: string;
         city: string;
         zipcode: string;
-    },
+    }
 
     constructor(user) {
         this.id = user.id;

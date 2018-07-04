@@ -11,11 +11,13 @@ import { User } from '@models/user'
 export class LandingPage implements OnInit {
 
   users: User[]; // list of users
-  modalOpened: false;
+  modalOpened: boolean;
 
   constructor(
     private jsonPlaceHolderService: JsonPlaceHolderService,
-    private router: Router) { }
+    private router: Router) {
+    this.modalOpened = false;
+  }
 
 
   ngOnInit() {
