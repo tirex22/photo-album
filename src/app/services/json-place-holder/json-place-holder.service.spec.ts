@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { JsonPlaceHolderService } from './json-place-holder.service';
+import { JsonPlaceHolderService } from './index';
 
 describe('JsonPlaceHolderService', () => {
   beforeEach(() => {

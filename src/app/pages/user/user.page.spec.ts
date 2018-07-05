@@ -1,6 +1,6 @@
 import { async, PageFixture, TestBed } from '@angular/core/testing';
 
-import { UserPage } from './user.Page';
+import { UserPage } from './index';
 
 describe('UserPage', () => {
   let Page: UserPage;

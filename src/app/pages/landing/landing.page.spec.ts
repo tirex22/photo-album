@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LandingPage } from './landing.page';
+import { LandingPage } from './index';
 
 describe('LandingPage', () => {
   let component: LandingPage;

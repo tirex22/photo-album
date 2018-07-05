@@ -22,8 +22,10 @@ export class UserFormComponent implements OnInit {
   }
 
   submitForm(user) {
-    this.onCreateUser(user);
-    this.userForm.reset();
+    if (this.userForm.valid) {
+      this.onCreateUser(user);
+      this.userForm.reset();
+    }
   }
 
   createForm = () => {
