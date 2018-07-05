@@ -21,9 +21,10 @@ export class UserFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(user) {
+  submitForm() {
     if (this.userForm.valid) {
-      this.onCreateUser(user);
+      this.onCreateUser(this.userForm.value);
+      this.onFormClosed();
       this.userForm.reset();
     }
   }

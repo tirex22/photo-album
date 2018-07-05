@@ -7,7 +7,7 @@
     <h2 class="title">Add new user</h2>
 
     <!-- form -->
-    <form [formGroup]="userForm" (ngSubmit)='submitForm(userForm.value)'>
+    <form [formGroup]="userForm">
       <div class="form-container">
         <input formControlName="name" placeholder="Name" />
         <input formControlName="email" placeholder="Email" />
@@ -19,7 +19,10 @@
         <input formControlName="city" placeholder="City" />
       </div>
 
-      <input type="submit" ngClass="{{userForm.valid ? 'button' : 'button disabled' }}" />
+      <a (click)="submitForm()" ngClass="{{userForm.valid ? 'button' : 'button disabled' }}">
+        <p>Add User</p>
+      </a>
+
     </form>
 
   </div>
